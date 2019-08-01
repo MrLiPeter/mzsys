@@ -135,5 +135,17 @@
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
     </dependencies>
+<!--热部署插件eclispe下可以不加-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork><!--必须添加这个配置-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
