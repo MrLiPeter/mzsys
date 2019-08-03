@@ -101,13 +101,15 @@
 		$("#itemeEditForm [name=itemParams]").val(paramJson);
 		alert($("#itemeEditForm").serialize());
 		$.post("/item/update",$("#itemeEditForm").serialize(), function(data){
+			debugger;
+			console.log(data);
 			if(data.status == 200){
 				$.messager.alert('提示','修改商品成功!','info',function(){
 					$("#itemEditWindow").window('close');
 					$("#itemList").datagrid("reload");
 				});
 			}else{
-				$.message.alert("提示",data.msg);
+				$.messager.alert("提示",data.msg);
 			}
 		});
 	}

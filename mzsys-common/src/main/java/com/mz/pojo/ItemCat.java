@@ -20,9 +20,9 @@ import lombok.experimental.Accessors;
 public class ItemCat extends BasePojo{
    @TableId(type = IdType.AUTO)
    private Long id;
-   private Long parent_id;
+   private Long parentId;
    private String name;
    private Integer status; //1(正常)|2（删除）
-   private Integer sort_order; //排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数
-   private Boolean  is_parent; //该类目是否为父类目，1为true，0为false
+   private Integer sortOrder; //排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数
+   private Boolean  isParent; //该类目是否为父类目，1为true，0为false注意要用驼峰命名不然数据库中取出空值，一脸懵逼
 }
